@@ -15,4 +15,7 @@
 		die( "<p> Connection Failed!</p>");
 	}
 
+	$query ="SET Names utf-8"; 
+	mysqli_query($connection, $query); 
+
  ?>

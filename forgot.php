@@ -5,15 +5,28 @@
 <!-- for phpmaier -->
 <?php // require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+// use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\Exception;
+
 // require 'vendor/phpmailer/phpmailer/src/Exception.php';
 // require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
-require 'vendor/autoload.php';
+// require 'vendor/autoload.php';
 // require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 
 ?>
-<?php require 'classes/config.php';?>
+<?php  // require 'classes/config.php';?>
+
+<?php 
+// with composer this is requiring evreything in classes folder
+require 'vendor/autoload.php'; 
+
+?>
+
+<?php 
+   use PHPMailer\PHPMailer\PHPMailer;
+ // use PHPMailer\PHPMailer\Exception;
+
+ ?>
 
 <?php
 
@@ -74,7 +87,8 @@ require 'vendor/autoload.php';
                    //          $message = 'Message could not be sent. Mailer Error: '. $mail->ErrorInfo;
                    //  }
                  
-                 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+                 // this is from the source code
+     $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
     //Server settings
     $mail->SMTPDebug = 2;                                 // Enable verbose debug output
@@ -99,13 +113,15 @@ try {
     // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
     //Content
-    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->isHTML(true);       
+    // $mali->Charset('UTF-8');                           // Set email format to HTML
     $mail->Subject = 'Here is the subject';
     $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-    $mail->send();
+    if ($mail->send()) {
     echo 'Message has been sent';
+    };
 } catch (Exception $e) {
     echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 }
