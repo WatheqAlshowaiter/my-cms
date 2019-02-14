@@ -7,7 +7,7 @@
 
 <?php 
   
-   checkIfUserIsLoggedInAndRedirect("diaz/mine/cms2/admin"); 
+   checkIfUserIsLoggedInAndRedirect("/diaz/mine/cms2/admin"); 
 
    if (ifItisMethod('post')) {
      if (isset($_POST['username']) && isset($_POST['password'])) {

@@ -70,7 +70,6 @@
 
 
            ?>
-
           <form action="" method="post">
             <div class="row">
                 <div id="bulkOptionContainer" class="col-sm-4">
@@ -112,6 +111,7 @@
                </thead>
                <tbody>
                   <?php 
+                    // $user = $_SESSION['username']; // display posts by only usr logged in 1/2 
                  // $query = "SELECT * FROM posts order by post_id desc"; 
  $query  = "SELECT posts.post_id, posts.cat_id, posts.post_title, posts.post_author, posts.post_user, posts.post_date, ";
  $query .="posts.post_image, posts.post_content, posts.post_tags, posts.post_comment_count, posts.post_status, ";   
@@ -119,6 +119,7 @@
  $query .=" categories.cat_id, categories.cat_title "; 
  $query .="FROM posts LEFT JOIN categories on posts.cat_id = categories.cat_id "; 
  $query .="ORDER BY posts.post_id desc"; 
+ // $query .="where posts.post_user = '$user' ORDER BY posts.post_id desc"; // // display posts by only usr logged in 2/2 
 
                  $select_all_posts = mysqli_query($connection, $query);
 

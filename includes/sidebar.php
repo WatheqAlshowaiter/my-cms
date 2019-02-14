@@ -1,13 +1,19 @@
         <div class="col-md-4">
 
           <?php 
+
+          if (isset($_POST['login'])) {
               if (ifItisMethod('post')) {
                    if (isset($_POST['username']) && isset($_POST['password'])) {
                     login_user($_POST['username'], $_POST['password']); 
                    }else{
                     redirect('index'); 
                    }
-                 }
+                 }     
+
+            }
+
+
            ?>
 
           <!-- Search Widget -->

@@ -75,13 +75,17 @@
 
           <hr>
 
+
+
           <!-- Date/Time -->
           <p>Posted on <?php echo $row['post_date']; ?></p>
 
           <hr>
           <!-- Preview Image -->
-          <a href="post.php?p_id=<?php echo $row['post_id']?>">
-             <img src="images/<?php echo $row['post_image'] ;?>" class ="img-fluid rounded">
+            <?php  $post_image = $row['post_image']; ?>
+         
+           <a href="post.php?p_id=<?php echo $row['post_id']?>"> 
+              <img src="images/<?php echo imagePlaceholder($post_image);?>" class ="img-fluid rounded"> 
           </a>
          
  <!--          <img class="img-fluid rounded" src="http://placehold.it/900x300" alt=""> -->

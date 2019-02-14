@@ -1,5 +1,13 @@
 <?php
 
+function imagePlaceholder($image=''){
+  if(!$image){
+    return 'images/cartoon.jpg'; 
+  }else {
+    return $image; 
+  }
+}
+
 function redirect($location){
   header("Location: $location"); 
   exit; 
