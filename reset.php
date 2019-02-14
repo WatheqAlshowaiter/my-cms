@@ -8,6 +8,21 @@
 // if (!isset($_GET['email']) && !isset($_GET['token'])) {
 // 	redirect('index');
 // }
+$token = 'fc02986218d2ac1aa4c2df346fb6a1f9700a3f5a9ff1f54ea833ef37fc4ab5cbf96b54f49bd9bd021b69f719fd4e6e64c7ad'; 
+if ($stmt = mysqli_prepare($connection, "SELECT user_name, user_email, token  from users where token =?")) {
+	mysqli_stmt_bind_param($stmt, "s", $token);
+	mysqli_stmt_bind_result($stmt, $username, $email, $token); 
+	mysqli_stmt_execute($stmt); 
+	mysqli_stmt_fetch($stmt);
+	mysqli_stmt_close($stmt); 
+
+	// if ($_GET['token']!==$token|| $_GET['email']!==$email) {
+	// 	redirect('index'); 
+	// }
+
+	
+
+}
  ?>
 <!-- Page Content -->
 <body class="bg-dark">
