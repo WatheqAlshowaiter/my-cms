@@ -32,6 +32,31 @@
 <?php include 'includes/navigation.php'; ?>
 <?php // include 'admin/functions.php'; ?>
 
+<!-- for pusher notification -->
+<?php require 'vendor/autoload.php';  ?>
+<?php 
+
+  $dotenv = Dotenv\Dotenv::create(__DIR__);
+  $dotenv->load();
+
+ ?>
+
+<?php 
+// should be an array 
+ $options = array(
+    'cluster' => 'ap2',
+    'useTLS' => true
+  );
+  $pusher = new Pusher\Pusher(
+    getenv('KEY'),
+    getenv('SECRET'),
+    getenv('APP_ID'),
+    $options
+  );
+
+
+ ?>
+
 
 <?php 
   
@@ -81,7 +106,9 @@
         }
         if (empty($error)) {
               register_user($username, $email, $password); 
-
+              // for pusher notification
+                $data['message'] = $username ;
+                $pusher->trigger('notifications', 'new_user', $data);
               login_user($username, $password);
 
         }

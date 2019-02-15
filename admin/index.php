@@ -701,3 +701,47 @@
     </div>
     <!-- /#wrapper -->
 <?php include 'includes/admin_footer.php'; ?>
+<!-- toastr js for pretty notifications -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+      var pusher = new Pusher('8b0b2513a24ba1333b92', {
+        cluster:'ap2'
+      });
+
+      var notificationChannel = pusher.subscribe('notifications'); 
+      notificationChannel.bind(' ',function(notification){
+        var message = notification.message; 
+        toastr.success('${message} just registered'); 
+        console.log(message);
+      });
+
+    }); 
+   
+
+
+    // Enable pusher logging - don't include this in production
+    // Pusher.logToConsole = true;
+
+    // var pusher = new Pusher('8b0b2513a24ba1333b92', {
+    //   cluster: 'ap2',
+    //   forceTLS: true
+    // });
+
+    // var channel = pusher.subscribe('my-channel');
+    // channel.bind('my-event', function(data) {
+    //   console.log('sd'); 
+    // });
+  </script>
+
+
+
+
+
+
+
+

@@ -1,6 +1,8 @@
 {
     "require": {
-        "phpmailer/phpmailer": "^6.0"
+        "phpmailer/phpmailer": "^6.0",
+        "pusher/pusher-php-server": "^3.3",
+        "vlucas/phpdotenv": "^3.3"
     }, 
     "autoload":{
     	"classmap": [
