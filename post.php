@@ -4,6 +4,13 @@
     <!-- Navigation -->
     <?php include("includes/navigation.php"); ?>
 
+    <?php 
+        if (isset($_POST['liked'])) {
+             echo "<h1>It works</h1>";
+        }
+
+     ?>
+
     <!-- Page Content -->
     <div class="container">
 
@@ -88,7 +95,22 @@
                 }
             ?>
 
-            <!-- Blog Comments -->
+            <!-- likes thuns up  -->
+            <div class="row">
+                <div class="col"> 
+                    <p class="float-right glyphicon glyphicon-thumsup"><a class="like" href="#"> <span class="far fa-thumbs-up"></span> like</a></p>
+                </div>
+               
+            </div>
+              <div class="row">
+                <div class="col"> 
+                    <p class="float-right"> likes: 10</p>
+                    <!-- <i class="far fa-thumbs-up"></i> -->
+                </div>
+               
+            </div>
+
+            <!-- Blog Comments --p>
 
             <?php
             
@@ -135,7 +157,7 @@
 
             ?>
 
-                <!-- Comments Form -->
+                 Comments Form -->
                 <div class="well">
                     <h4>Leave a Comment:</h4>
                     <form action="" method="post" role="form">
@@ -219,3 +241,25 @@
 
 
 <?php include("includes/footer.php"); ?>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var post_id = <?php echo $the_get_post_id; ?>;
+        var user_id = 35; // for ali user (admin)
+         $('.like').click(function(){
+            $.ajax({
+                url: "/diaz/mine/cms2/post.php?p_id=<?php echo $the_get_post_id; ?>", 
+                type: "post", 
+                data: {
+                    'liked': 1, 
+                    'post_id':post_id, 
+                     'user_id':user_id 
+                }
+            });
+         }); 
+    });  
+
+</script>
+
+
+
+

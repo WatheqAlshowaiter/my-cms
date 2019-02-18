@@ -6,8 +6,8 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/diaz/mine/cms2/vendor/jquery/jquery.min.js"></script>
+    <script src="/diaz/mine/cms2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   </body>
 
