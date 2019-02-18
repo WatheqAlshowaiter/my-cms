@@ -6,7 +6,20 @@
 
     <?php 
         if (isset($_POST['liked'])) {
-             echo "<h1>It works</h1>";
+            $post_id =  $_POST['post_id'];
+
+            //1. select post
+            $query = "select * from posts where post_id = $post_id"; 
+            $postResult = mysqli_query($connection, $query); 
+            $post = mysqli_fetch_array($postResult);  
+            $likes = $post['likes']; 
+            if (mysqli_num_rows($postResult)==1) {
+                echo $post['post_id'];
+            }
+            //2. update post with likes 
+
+            //3. create likes for post   
+
         }
 
      ?>
@@ -248,10 +261,10 @@
          $('.like').click(function(){
             $.ajax({
                 url: "/diaz/mine/cms2/post.php?p_id=<?php echo $the_get_post_id; ?>", 
-                type: "post", 
+                type: 'post', 
                 data: {
-                    'liked': 1, 
-                    'post_id':post_id, 
+                     'liked': 1, 
+                     'post_id':post_id, 
                      'user_id':user_id 
                 }
             });
