@@ -4,21 +4,44 @@
     <!-- Navigation -->
     <?php include("includes/navigation.php"); ?>
 
+<?php //echo "http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . "/post.php?p_id="; ?>
     <?php 
         if (isset($_POST['liked'])) {
+            // from AJAx request 
             $post_id =  $_POST['post_id'];
-
+            $user_id = $_POST['user_id']; 
             //1. select post
             $query = "select * from posts where post_id = $post_id"; 
             $postResult = mysqli_query($connection, $query); 
             $post = mysqli_fetch_array($postResult);  
             $likes = $post['likes']; 
-            if (mysqli_num_rows($postResult)==1) {
-                echo $post['post_id'];
-            }
+ 
             //2. update post with likes 
-
+            mysqli_query($connection, "UPDATE posts set likes = $likes+1 where post_id = $post_id"); 
+            
             //3. create likes for post   
+            mysqli_query($connection, "INSERT into likes(user_id,post_id) values ($user_id, $post_id)"); 
+            exit(); 
+
+        }
+
+        if (isset($_POST['unliked'])) {
+            
+            // from AJAx request 
+            $post_id =  $_POST['post_id'];
+            $user_id = $_POST['user_id']; 
+            // //1. select post
+            $query = "select * from posts where post_id = $post_id"; 
+            $postResult = mysqli_query($connection, $query); 
+            $post = mysqli_fetch_array($postResult);  
+            $likes = $post['likes']; 
+ 
+            // // //2. update post with likes (decrementing)
+            mysqli_query($connection, "UPDATE posts set likes=$likes-1 where post_id = $post_id"); 
+            
+            // // //3. create likes for post   
+            mysqli_query($connection, "DELETE from likes where post_id=$post_id and user_id=$user_id"); 
+            exit();
 
         }
 
@@ -72,7 +95,7 @@
                     $post_id            = $row['post_id'];
                     $post_category_id   = $row['post_category_id'];
                     $post_title         = $row['post_title'];
-                    $post_author        = $row['post_author'];
+                    $post_author        = $row['post_user'];
                     $post_date          = $row['post_date'];
                     $post_image         = $row['post_image'];
                     $post_content       = $row['post_content'];
@@ -96,7 +119,7 @@
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span> <?php echo $post_date; ?></p>
                 <hr>
-                <img class="img-responsive" src="images/<?php echo $post_image; ?>" alt="">
+                <img class="img-responsive" src="/diaz/mine/cms2/images/<?php echo $post_image; ?>" alt="">
 
 
                 <p><?php echo $post_content; ?></p>
@@ -108,10 +131,16 @@
                 }
             ?>
 
-            <!-- likes thuns up  -->
+            <!-- likes thums up  -->
             <div class="row">
                 <div class="col"> 
-                    <p class="float-right glyphicon glyphicon-thumsup"><a class="like" href="#"> <span class="far fa-thumbs-up"></span> like</a></p>
+                    <p class="float-right"><a class="like" href="#"> <span class="far fa-thumbs-up"></span> like</a></p>
+                </div>
+               
+            </div>
+            <div class="row">
+                <div class="col"> 
+                    <p class="float-right"><a class="unlike" href="#"> <span class="far fa-thumbs-down"></span> unlike</a></p>
                 </div>
                
             </div>
@@ -123,7 +152,7 @@
                
             </div>
 
-            <!-- Blog Comments --p>
+            <!-- Blog Comments -->
 
             <?php
             
@@ -170,7 +199,7 @@
 
             ?>
 
-                 Comments Form -->
+                 <!--   Comments Form -->
                 <div class="well">
                     <h4>Leave a Comment:</h4>
                     <form action="" method="post" role="form">
@@ -258,12 +287,25 @@
     $(document).ready(function(){
         var post_id = <?php echo $the_get_post_id; ?>;
         var user_id = 35; // for ali user (admin)
+         // for like 
          $('.like').click(function(){
             $.ajax({
                 url: "/diaz/mine/cms2/post.php?p_id=<?php echo $the_get_post_id; ?>", 
                 type: 'post', 
                 data: {
-                     'liked': 1, 
+                     'liked'  : 1, 
+                     'post_id':post_id, 
+                     'user_id':user_id 
+                }
+            });
+         }); 
+         // for unlike 
+          $('.unlike').click(function(){
+            $.ajax({
+                url: "/diaz/mine/cms2/post.php?p_id=<?php echo $the_get_post_id; ?>", 
+                type: 'post', 
+                data: {
+                     'unliked'  : 1, 
                      'post_id':post_id, 
                      'user_id':user_id 
                 }
