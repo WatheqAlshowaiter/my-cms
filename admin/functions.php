@@ -271,10 +271,29 @@ function login_user ($username, $password){
 
 function loggedInUserId(){
   if (isLoggedIn()) {
-    $result = query("SELECT * from users where user_name ='"$_SESSION['username']"'"); 
-    
+    $username = $_SESSION['username']; 
+    $result = query("SELECT * from users where user_name='$username'"); 
+    $usernameNum = mysqli_fetch_array($result); 
+    if (mysqli_num_rows($result)>=1) {
+      return $usernameNum['user_id'];
+    }
   }
+  return false;
 }
+
+
+// function loggedInUserId(){
+//   global $connection; 
+//   if (isLoggedIn()) {
+//     $username = $_SESSION['username']; 
+//     $result = mysqli_query($connection,"SELECT * from users where user_name='$username'"); 
+//     $user  = mysqli_fetch_array($result);
+//     if (mysqli_num_rows($result)>=1) {
+//           return $user['user_id']; 
+//     }
+//   }
+//   return false; 
+// }
 
 function checkIfUserIsLoggedInAndRedirect($redirectLocation=null){
   if (isLoggedIn()) {
