@@ -4,3 +4,11 @@
 <?php
 
 echo loggedInUserId(); 
+
+if (userLikedThisPost(17)) {
+	echo "user liked this post";
+}else {
+		echo "user doesn't liked this post";
+
+}
+

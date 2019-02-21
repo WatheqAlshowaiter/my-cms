@@ -42,7 +42,7 @@
             <div class="card-body">
    
                 <span class="input-group-btn">
-                  <a class='btn btn-primary'href="admin/logout.php">Logout</a>
+                  <a class='btn btn-primary'href="/diaz/mine/cms2/admin/logout.php">Logout</a>
                 </span>
               </div>
               </form>

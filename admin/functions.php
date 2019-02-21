@@ -274,11 +274,19 @@ function loggedInUserId(){
     $username = $_SESSION['username']; 
     $result = query("SELECT * from users where user_name='$username'"); 
     $usernameNum = mysqli_fetch_array($result); 
-    if (mysqli_num_rows($result)>=1) {
-      return $usernameNum['user_id'];
-    }
+
+    return mysqli_num_rows($result) >= 1 ? $usernameNum['user_id'] : false; 
+    // if (mysqli_num_rows($result)>=1) {
+    //   return $usernameNum['user_id'];
+    // }
   }
   return false;
+}
+
+function userLikedThisPost($post_id=''){
+  $result = query("SELECT * from likes where user_id = ".loggedInUserId()." AND post_id=$post_id"); 
+
+  return mysqli_num_rows($result) >= 1 ? true : false; 
 }
 
 
