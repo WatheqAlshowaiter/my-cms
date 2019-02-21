@@ -20,6 +20,11 @@ function confirm_query($query){
      } 
 }
 
+function query($query){
+  global $connection; 
+  return mysqli_query($connection,$query); 
+}
+
 // excaping frpm SQL injection 
 function escape($string){
   global $connection; 
@@ -262,6 +267,13 @@ function login_user ($username, $password){
       return true; 
     }
     return false; 
+}
+
+function loggedInUserId(){
+  if (isLoggedIn()) {
+    $result = query("SELECT * from users where user_name ='"$_SESSION['username']"'"); 
+    
+  }
 }
 
 function checkIfUserIsLoggedInAndRedirect($redirectLocation=null){
