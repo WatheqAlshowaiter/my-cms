@@ -17,10 +17,10 @@
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="#">Welcome to my data</a>
+              <a href="#">Welcome to dashboard</a>
             </li>
             <li class="breadcrumb-item active">Admin</li>
-            <li class="breadcrumb-item active"><?php echo get_user_name(); ?> </li>
+            <li class="breadcrumb-item active"><?php echo get_user_name();?> </li>
 
           </ol>
 

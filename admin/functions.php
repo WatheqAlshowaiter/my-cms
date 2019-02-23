@@ -8,6 +8,7 @@ function imagePlaceholder($image=''){
   }
 }
 
+// ======= Database Helpers ====// 
 function redirect($location){
   header("Location: $location"); 
   exit; 
@@ -22,8 +23,44 @@ function confirm_query($query){
 
 function query($query){
   global $connection; 
-  return mysqli_query($connection,$query); 
+  $result =  mysqli_query($connection,$query); 
+  confirm_query($result); 
+  return $result; 
 }
+
+function fetchRecord ($result){
+  return mysqli_fetch_array($result); 
+}
+
+// ======= End  Database Helpers ====// 
+
+// ======= Authentication Helpers ====// 
+
+function is_admin(){
+  global $connection; 
+
+  if(isLoggedIn()){
+    $query = "SELECT user_role from users where user_id=".$_SESSION['user_id'].""; 
+    $result = query($query); 
+    // confirm_query($result); // because it is embeded in query function 
+    $row = fetchRecord($result); 
+    if ($row['user_role'] == 'admin') {
+      return true; 
+    }else {
+      return false; 
+    }
+  }
+  return false; 
+}
+
+// ======= End Authentication Helpers ====// 
+
+// ======= General Helpers ====// 
+function get_user_name(){
+  return isset($_SESSION['username'])? $_SESSION['username'] : null; 
+}
+
+// ======= General Helpers ====// 
 
 // excaping frpm SQL injection 
 function escape($string){
@@ -143,20 +180,7 @@ function checkStatus($table, $column, $status){
 
 }
 
-function is_admin($username =''){
-  global $connection; 
 
-  $query = "SELECT user_role from users where user_name = '$username'"; 
-  $result = mysqli_query($connection, $query); 
-  confirm_query($result); 
-  $row = mysqli_fetch_array($result); 
-  if ($row['user_role'] == 'admin') {
-    return true; 
-  }else {
-    return false; 
-  }
-
-}
 
 
 function user_exists($username){
@@ -233,6 +257,7 @@ function login_user ($username, $password){
       $db_user_role = $row['user_role'];
 
           if (password_verify($password, $db_user_password)){
+      $_SESSION['user_id'] = $db_user_id; 
       $_SESSION['username'] = $db_user_name; 
       $_SESSION['firstname'] = $db_user_firstname; 
       $_SESSION['lastname'] = $db_user_lastname; 
