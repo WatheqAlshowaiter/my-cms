@@ -130,20 +130,20 @@
             <?php
                 }
             ?>
-
+            <!-- THIS LIKE BUTTONS HAVE NO FUNCTIONALITY YET  -->
             <!-- likes thums up  -->
             <div class="row">
                 <div class="col"> 
-                    <p class="float-right"><a class="<?php echo userLikedThisPost($the_get_post_id)?'unlike':'like'; ?>" href=""> <span class="far <?php echo userLikedThisPost($the_get_post_id)?'fa-thumbs-down':'fa-thumbs-up';?>"></span> <?php echo userLikedThisPost($the_get_post_id)?'Unlike':'Like'; ?></a></p>
+                    <p class="float-right"><a class="" href=""> <span class="far fa-thumbs-up"></span>Like</a></p>
                 </div>
                
             </div>
-<!--             <div class="row">
+            <div class="row">
                 <div class="col"> 
                     <p class="float-right"><a class="unlike" href="#"> <span class="far fa-thumbs-down"></span> unlike</a></p>
                 </div>
                
-            </div> -->
+            </div>
               <div class="row">
                 <div class="col"> 
                     <p class="float-right"> likes: 10</p>
