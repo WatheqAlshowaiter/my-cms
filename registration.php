@@ -43,16 +43,16 @@
 
 <?php 
 // should be an array 
- $options = array(
-    'cluster' => 'ap2',
-    'useTLS' => true
-  );
-  $pusher = new Pusher\Pusher(
-    getenv('KEY'),
-    getenv('SECRET'),
-    getenv('APP_ID'),
-    $options
-  );
+//  $options = array(
+//     'cluster' => 'ap2',
+//     'useTLS' => true
+//   );
+//   $pusher = new Pusher\Pusher(
+//     getenv('KEY'),
+//     getenv('SECRET'),
+//     getenv('APP_ID'),
+//     $options
+//   );
 
 
  ?>
@@ -108,7 +108,7 @@
               register_user($username, $email, $password); 
               // for pusher notification
                 $data['message'] = $username ;
-                $pusher->trigger('notifications', 'new_user', $data);
+                // $pusher->trigger('notifications', 'new_user', $data);
               login_user($username, $password);
 
         }

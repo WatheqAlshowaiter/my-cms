@@ -91,12 +91,12 @@ require 'vendor/autoload.php';
      $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
     //Server settings
-    $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+    // $mail->SMTPDebug = 2;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'smtp.mailtrap.io';  // Specify main and backup SMTP servers
+    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'b932167927ad3a';                 // SMTP username
-    $mail->Password = '662c107c5190fc';                           // SMTP password
+    $mail->Username = 'confident.ye@gmail.com';                 // SMTP username
+    $mail->Password = '774881466!';                           // SMTP password
     $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 465;                                    // TCP port to connect to
 
@@ -128,7 +128,13 @@ try {
         'allow_self_signed' => true
     )
 );
-
+$mail->SMTPOptions = array(
+    'ssl' => array(
+    'verify_peer' => false,
+    'verify_peer_name' => false,
+    'allow_self_signed' => true
+    )
+);
 
     if ($mail->send()) {
     // echo 'Message has been sent';

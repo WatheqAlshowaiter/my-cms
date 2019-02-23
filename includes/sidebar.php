@@ -62,7 +62,7 @@
                   <button name="login" class="btn btn-primary" type="submit">Submit</button>
                 </span>
               </div>
-                 <a class='d-block small'href="forgot.php?forgot=<?php echo uniqid(); ?>">forget password?</a>
+                 <!-- <a class='d-block small'href="forgot.php?forgot=<?php // echo uniqid(); ?>">forget password?</a> -->
               </form>
             </div>
           </div>

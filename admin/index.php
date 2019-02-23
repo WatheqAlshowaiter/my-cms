@@ -153,13 +153,13 @@
           ['Data', ''],
           <?php  
           
-            $element_text = ['Comments','Unapproved Comments' ,'Categories', 'Users','Subscribers Users', 'AllPosts','Active Posts', 'Draft Posts']; 
-            $element_count =[$comments_count,$unapproved_comments_count,$categories_count, $users_count,$subscriber_count, $posts_count, $publisheds_count,$drafts_count];
+            // $element_text = ['Comments','Unapproved Comments' ,'Categories', 'Users','Subscribers Users', 'AllPosts','Active Posts', 'Draft Posts']; 
+            // $element_count =[$comments_count,$unapproved_comments_count,$categories_count, $users_count,$subscriber_count, $posts_count, $publisheds_count,$drafts_count];
 
-            for($i=0; $i<8;$i++)
-            {
-              echo "['$element_text[$i]'". "," . $element_count[$i]."]," ;
-            } 
+            // for($i=0; $i<8;$i++)
+            // {
+            //   echo "['$element_text[$i]'". "," . $element_count[$i]."]," ;
+            // } 
 
           ?>
         ]);
@@ -700,16 +700,16 @@
 
     </div>
     <!-- /#wrapper -->
-<?php include 'includes/admin_footer.php'; ?>
+
 <!-- toastr js for pretty notifications -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
   <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
+ -->
 
-
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     $(document).ready(function(){
-      var pusher = new Pusher('8b0b2513a24ba1333b92', {
+      var pusher = new Pusher('<?php// dotenv('KEY')?>', {
         cluster:'ap2'
       });
 
@@ -724,19 +724,19 @@
    
 
 
-    // Enable pusher logging - don't include this in production
-    // Pusher.logToConsole = true;
+    // Enable pusher logging - don't include this in productionsdf
+    Pusher.logToConsole = true;sd
 
-    // var pusher = new Pusher('8b0b2513a24ba1333b92', {
-    //   cluster: 'ap2',
-    //   forceTLS: true
-    // });
+   var pusher = new Pusher('8b0b2513a24ba1333b92', {
+      cluster: 'ap2',
+      forceTLS: true
+    });
 
-    // var channel = pusher.subscribe('my-channel');
-    // channel.bind('my-event', function(data) {
-    //   console.log('sd'); 
-    // });
-  </script>
+    var channel = pusher.subscribe('my-channel');
+    channel.bind('my-event', function(data) {
+      console.log('sd'); 
+    });
+  </script> -->
 
 
 
