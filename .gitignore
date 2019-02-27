@@ -1,3 +1,11 @@
 .env
 /vendor/
 /admin/sb-admin-2/
+category_old.php
+category_prep_stmt.php
+gulpfile.js
+LICENSE
+old_index.php
+README_old.md
+test.php
+test2.php
