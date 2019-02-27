@@ -699,6 +699,7 @@
       <!-- /.content-wrapper -->
 
     </div>
+    <?php include 'includes/admin_footer.php'; ?>
     <!-- /#wrapper -->
 
 <!-- toastr js for pretty notifications -->

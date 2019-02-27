@@ -20,7 +20,7 @@
           <div class="card my-4">
             <h5 class="card-header">Search</h5>
             <div class="card-body">
-              <form action="/diaz/mine/cms2/search.php" method="post">
+              <form action="<?=BASE_URL;?>/search.php" method="post">
               <div class="input-group">
                 <input name = "search" type="text" class="form-control" placeholder="Search for...">
                 <span class="input-group-btn">
@@ -38,11 +38,11 @@
           <?php if (isset($_SESSION['role'])): ?>
             <!-- <h4>Your are logged in as <?php //echo $_SESSION['username']; ?> </h4> -->
             <!-- <a class='btn btn-primary'href="admin/logout.php"></a> -->
-            <h5 class="card-header">You are logged in as <big><?php echo $_SESSION['username']; ?></big></h5>
+            <h5 class="card-header">You are logged in as <b><?php echo $_SESSION['username']; ?></b></h5>
             <div class="card-body">
    
                 <span class="input-group-btn">
-                  <a class='btn btn-primary'href="/diaz/mine/cms2/admin/logout.php">Logout</a>
+                  <a class='btn btn-primary'href="<?=BASE_URL;?>/admin/logout.php">Logout</a>
                 </span>
               </div>
               </form>
@@ -67,7 +67,7 @@
             </div>
           </div>
 
-           <?php endif ?>
+          <?php endif;?>
           <!-- Categories Widget -->
           <?php 
               $query = "SELECT * FROM categories limit 8"; 
@@ -85,7 +85,7 @@
                       while ($row = mysqli_fetch_assoc($select_catgs_sidebar)) {
                         $cat_id = $row['cat_id']; 
                         $cat_title = $row['cat_title']; 
-                        echo "<li><a href='/diaz/mine/cms2/category/{$cat_id}' class='text-white'> {$cat_title}</a></li>";
+                        echo "<li><a href='".BASE_URL."/category/{$cat_id}' class='text-white'> {$cat_title}</a></li>";
                       }
                      ?>
                     

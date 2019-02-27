@@ -20,5 +20,6 @@
 
 	// I should make it constant but later
 	$base_url =   "http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']);
+	define(BASE_URL, $base_url );
 
  ?>

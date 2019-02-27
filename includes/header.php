@@ -12,8 +12,8 @@
 
     <!-- Bootstrap core CSS -->
 
-    <link href="<?= $base_url;?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?=$base_url;  ?>/admin/vendor/fontawesome-free/css/all.min.css">
+    <link href="<?= BASE_URL;?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?=BASE_URL;  ?>/admin/vendor/fontawesome-free/css/all.min.css">
 
 
 
