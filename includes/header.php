@@ -11,15 +11,16 @@
     <title>Blog Post - Start Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/diaz/Mine/CMS2/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/diaz/mine/CMS2/admin/vendor/fontawesome-free/css/all.min.css">
+
+    <link href="<?= $base_url;?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?=$base_url;  ?>/admin/vendor/fontawesome-free/css/all.min.css">
 
 
 
 
     <!-- Custom styles for this template -->
-    <link href="/diaz/Mine/CMS2/css/blog-post.css" rel="stylesheet">
-    <link href="/diaz/Mine/CMS2/css/style.css" rel="stylesheet">
+    <link href="<?= $base_url;?>/css/blog-post.css" rel="stylesheet">
+    <link href="<?= $base_url;?>/css/style.css" rel="stylesheet">
 
   </head>
 

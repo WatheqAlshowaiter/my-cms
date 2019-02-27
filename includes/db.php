@@ -18,4 +18,7 @@
 	$query ="SET Names utf-8"; 
 	mysqli_query($connection, $query); 
 
+	// I should make it constant but later
+	$base_url =   "http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']);
+
  ?>
