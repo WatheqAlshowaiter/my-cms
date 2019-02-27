@@ -262,7 +262,7 @@ function login_user ($username, $password){
       $_SESSION['firstname'] = $db_user_firstname; 
       $_SESSION['lastname'] = $db_user_lastname; 
       $_SESSION['role'] = $db_user_role; 
-      redirect("/diaz/Mine/CMS2/admin/"); 
+      redirect("".BASE_URL. "/admin/"); 
     }else {
       return false;
     }

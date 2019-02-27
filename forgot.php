@@ -117,7 +117,7 @@ try {
     // $mali->Charset('UTF-8');                           // Set email format to HTML
     $mail->Subject = 'Here is the subject';
     $mail->Body    = "<p>Please Click to reset password 
-                      <a href='http://localhost/diaz/mine/cms2/reset.php?email=".$email."&  token=".$token.  "'></a>
+                      <a href='".BASE_URL."/reset.php?email=".$email."&token=".$token."'></a>
     </p>";
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 

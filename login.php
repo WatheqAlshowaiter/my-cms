@@ -7,13 +7,13 @@
 
 <?php 
   
-   checkIfUserIsLoggedInAndRedirect("/diaz/mine/cms2/admin"); 
+   checkIfUserIsLoggedInAndRedirect("".BASE_URL."/admin"); 
 
    if (ifItisMethod('post')) {
      if (isset($_POST['username']) && isset($_POST['password'])) {
       login_user($_POST['username'], $_POST['password']); 
      }else{
-      redirect('diaz/mine/cms2/login.php'); 
+      redirect("".BASE_URL."/login.php"); 
      }
    }
 

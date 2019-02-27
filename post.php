@@ -119,7 +119,7 @@
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span> <?php echo $post_date; ?></p>
                 <hr>
-                <img class="img-responsive" src="/diaz/mine/cms2/images/<?php echo $post_image; ?>" alt="">
+                <img class="img-responsive" src="<?=BASE_URL?>/images/<?php echo $post_image; ?>" alt="">
 
 
                 <p><?php echo $post_content; ?></p>
@@ -290,7 +290,7 @@
          // for like 
          $('.like').click(function(){
             $.ajax({
-                url: "/diaz/mine/cms2/post.php?p_id=<?php echo $the_get_post_id; ?>", 
+                url: "<?=BASE_URL?>/post.php?p_id=<?php echo $the_get_post_id; ?>", 
                 type: 'post', 
                 data: {
                      'liked'  : 1, 
@@ -302,7 +302,7 @@
          // for unlike 
           $('.unlike').click(function(){
             $.ajax({
-                url: "/diaz/mine/cms2/post.php?p_id=<?php echo $the_get_post_id; ?>", 
+                url: "<?=BASE_URL?>/post.php?p_id=<?php echo $the_get_post_id; ?>", 
                 type: 'post', 
                 data: {
                      'unliked'  : 1, 

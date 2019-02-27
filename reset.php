@@ -37,7 +37,7 @@ if ($stmt = mysqli_prepare($connection, "SELECT user_name, user_email, token  fr
 
                 if(mysqli_stmt_affected_rows($stmt) >= 1){
 
-                  redirect('/diaz/mine/cms2/login.php');
+                  redirect('<?=BASE_URL?>/login.php');
 
 
                 }

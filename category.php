@@ -65,7 +65,7 @@
 
                 <!-- First Blog Post -->
                 <h1>
-                    <a href="/diaz/mine/cms2/post.php?p_id=<?php echo $post_id;?>"><?php echo $post_title; ?></a>
+                    <a href="<?=BASE_URL?>/post.php?p_id=<?php echo $post_id;?>"><?php echo $post_title; ?></a>
                 </h1>
                 <p class="lead">
                     by <a href="index.php"><?php echo $post_author; ?></a>
@@ -73,7 +73,7 @@
                 <hr>
                 <p>Posted on <?php echo $row['post_date']; ?></p>
                 <hr>
-                <a href="/diaz/mine/cms2/post.php?p_id=<?php echo $row['post_id']?>">
+                <a href="<?=BASE_URL?>/post.php?p_id=<?php echo $row['post_id']?>">
                     <img src="images/<?php echo $row['post_image'] ;?>" class ="img-fluid rounded">
                 </a>
                 <hr>
