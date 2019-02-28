@@ -11,3 +11,5 @@
 ## the admin 
 - managing (admins and subscribers) adding, editing, deleting and watch them all 
 
+it is practicing after [this course](https://www.udemy.com/php-for-complete-beginners-includes-msql-object-oriented/) with some of my touches. 
+
