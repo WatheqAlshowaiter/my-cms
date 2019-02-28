@@ -118,8 +118,19 @@
             <a class="dropdown-item" href="posts.php?source=add_post">Add posts </a>
           </div>
         </li>
-        <!-- end of posts  -->
+        
+        <li class="nav-item">
+          <a class="nav-link" href="posts.php"> 
+            <i class="fas fa-fw fa-folder"></i>
+            <span>View all posts  </span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="posts.php?source=add_post"> 
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Add post </span></a>
+        </li>
 
+        <!-- end of posts  -->
         <!-- Comments -->
         <li class="nav-item">
           <a class="nav-link" href="comments.php">
@@ -148,6 +159,17 @@
             <a class="dropdown-item" href="users.php?source=add_user">Add users</a>
           </div>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="users.php">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>View all users </span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="users.php?source=add_user">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Add users</span></a>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link" href="categories.php">
             <i class="fas fa-fw fa-chart-area"></i>

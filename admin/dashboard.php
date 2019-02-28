@@ -176,12 +176,12 @@
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
     </script> -->
-     <div id="columnchart_material" style="width: 'auto'; height: 500px;"></div>
+     <!-- <div id="columnchart_material" style="width: 'auto'; height: 500px;"></div> -->
 
           <!-- <br> -->
           <hr>
           <!-- Area Chart Example-->
-          <div class="card mb-3">
+          <!-- <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-chart-area"></i>
               Area Chart Example</div>
@@ -189,14 +189,14 @@
               <canvas id="myAreaChart" width="100%" height="30"></canvas>
             </div>
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
+          </div> -->
 
           <!-- DataTables Example -->
-          <div class="card mb-3">
+          <!-- <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Data Table Example</div>
-            <div class="card-body">
+              Data Table Example</div> -->
+            <!-- <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
@@ -679,11 +679,11 @@
                   </tbody>
                 </table>
               </div>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div> -->
+            <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
 
-        </div>
+        </div> -->
         <!-- /.container-fluid -->
 
         <!-- Sticky Footer -->

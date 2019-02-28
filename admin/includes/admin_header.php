@@ -48,7 +48,7 @@
     <!-- jquery cdn -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  -->
      <!-- Page level plugin CSS-->
-    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet"> -->
     <!-- datatable plugin css  -->
     <!-- <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
 

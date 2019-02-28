@@ -29,9 +29,9 @@
     <script  src="js/jqueryScript.js"></script>
 
     <!-- bootsrap cdn -->
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
 
 
     <!-- Core plugin JavaScript-->
@@ -39,11 +39,11 @@
 
 
     <!-- Page level plugin JavaScript-->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <!-- <script src="vendor/chart.js/Chart.min.js"></script> -->
 
     <!-- data table plugin js  -->
     
-    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"> </script>
+    <!-- <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"> </script> -->
     <!-- <script src="vendor/datatables/jquery.dataTables.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.js"></script> -->
 
@@ -53,8 +53,8 @@
 
 
     <!-- Demo scripts for this page-->
-    <script src="js/demo/datatables-demo.js"></script>
-    <script src="js/demo/chart-area-demo.js"></script>
+    <!-- <script src="js/demo/datatables-demo.js"></script>
+    <script src="js/demo/chart-area-demo.js"></script> -->
 
     <!-- WYSIWYG text editor (tiny mce)  -->
     <script type="text/javascript" src="vendor/tinymce/tinymce.min.js"></script>
