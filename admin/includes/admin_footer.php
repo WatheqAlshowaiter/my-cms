@@ -27,6 +27,10 @@
     <!-- Bootstrap core JavaScript-->
 
     <script  src="js/jqueryScript.js"></script>
+
+    <!-- bootsrap cdn -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
@@ -36,8 +40,12 @@
 
     <!-- Page level plugin JavaScript-->
     <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- data table plugin js  -->
+    
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"> </script>
+    <!-- <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script> -->
 
 
     <!-- Custom scripts for all pages-->
