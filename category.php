@@ -73,9 +73,9 @@
                 <hr>
                 <p>Posted on <?php echo $row['post_date']; ?></p>
                 <hr>
-                <a href="<?=BASE_URL?>/post.php?p_id=<?php echo $row['post_id']?>">
-                    <img src="images/<?php echo $row['post_image'] ;?>" class ="img-fluid rounded">
-                </a>
+                <a href="post.php?p_id=<?php echo $row['post_id']?>"> 
+              <img src="../images/<?php echo imagePlaceholder($post_image);?>" class ="img-fluid rounded"> 
+          </a>
                 <hr>
                 <p><?php echo substr($row['post_content'], 0, 100); ?></p>
                 <a class="btn btn-primary" href="#">Read More >> <span class="glyphicon glyphicon-chevron-right"></span></a>
